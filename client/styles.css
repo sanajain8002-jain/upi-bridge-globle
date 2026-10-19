@@ -1,65 +1,133 @@
-/* GlobalPay - Midnight Neo-Bank Theme */
-:root {
-  --gp-bg: #090d16;
-  --gp-card-bg: #131c2e;
-  --gp-card-border: #1e293b;
-  --gp-primary: #3b82f6;
-  --gp-accent: #10b981; /* Emerald Neon */
-  --gp-text: #f8fafc;
-  --gp-text-muted: #94a3b8;
-}
-
-body {
-  background-color: var(--gp-bg) !important;
-  color: var(--gp-text) !important;
+/* GlobalPay Systematic App Shell */
+.gp-app-body {
+  background-color: #090d16 !important;
+  color: #f8fafc !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding-bottom: 70px; /* Space for bottom nav */
 }
 
-/* GlobalPay Custom Header & Dashboard Card */
-.globalpay-header {
+.gp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #090d16;
+  border-bottom: 1px solid #1e293b;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.gp-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.gp-wallet-pill {
+  background: #131c2e;
+  border: 1px solid #1e293b;
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-align: right;
+}
+
+.gp-content {
+  padding: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.gp-hero-card {
   background: linear-gradient(135deg, #131c2e 0%, #1e293b 100%);
-  border: 1px solid var(--gp-card-border);
+  border: 1px solid #334155;
   border-radius: 24px;
   padding: 20px;
-  margin: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-.globalpay-action-grid {
+.gp-quick-actions {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin: 16px;
+  gap: 10px;
+  margin-top: 16px;
 }
 
-.globalpay-action-card {
-  background: var(--gp-card-bg);
-  border: 1px solid var(--gp-card-border);
+.gp-action-btn {
+  background: #090d16;
+  border: 1px solid #334155;
+  color: #f8fafc;
   border-radius: 16px;
-  padding: 14px 8px;
-  text-align: center;
-  color: var(--gp-text);
+  padding: 10px 4px;
+  font-size: 11px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
+  text-align: center;
 }
 
-.globalpay-action-card:hover {
-  border-color: var(--gp-primary);
-  transform: translateY(-3px);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+.gp-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin: 20px 0 10px 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.globalpay-action-icon {
-  font-size: 24px;
+.gp-people-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.gp-person {
+  text-align: center;
+  font-size: 12px;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+.gp-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #131c2e;
+  border: 2px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
   margin-bottom: 6px;
 }
 
-.globalpay-badge {
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--gp-accent);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  padding: 4px 10px;
-  border-radius: 999px;
+/* Bottom Navigation Bar */
+.gp-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #090d16;
+  border-top: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  z-index: 9980;
+}
+
+.gp-nav-item {
+  color: #94a3b8;
+  text-decoration: none;
   font-size: 11px;
-  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.gp-nav-item.active {
+  color: #3b82f6;
 }

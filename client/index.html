@@ -1,25 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<link rel="manifest" href="/manifest.json">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#0f172a">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UPI Bridge Global — simulated cross-border UPI prototype</title>
-  <meta name="description" content="Hackathon prototype: a proposed way for UPI users to send money worldwide. All payments are simulated.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235b21b6'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="/vendor/flag-icons/css/flag-icons.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobalPay | Secure Global UPI</title>
   <link rel="stylesheet" href="/styles.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#090d16">
 </head>
-<body>
-  <a href="#main" class="no-print" style="position:absolute;left:-999px">Skip to content</a>
-  <div id="app"></div>
-  <noscript>This prototype needs JavaScript.</noscript>
-  <script type="module" src="/js/app.js"></script>
+<body class="gp-app-body">
+
+  <!-- Systematic Top Header -->
+  <header class="gp-header">
+    <div class="gp-brand">
+      <span class="gp-logo-icon">⚡</span>
+      <span class="gp-logo-text">GlobalPay</span>
+    </div>
+    <div class="gp-wallet-pill">
+      <span style="font-size:10px; color:#94a3b8; display:block;">Balance</span>
+      <span id="gp-header-balance" style="font-weight:700; color:#10b981;">₹45,850</span>
+    </div>
+  </header>
+
+  <!-- Main View Container (Dynamic views load here) -->
+  <main id="gp-main-content" class="gp-content">
+    <!-- Default Dashboard View -->
+    <div class="gp-dashboard">
+      <div class="gp-hero-card">
+        <div style="font-size:13px; color:#94a3b8;">Total Portfolio Value</div>
+        <div style="font-size:28px; font-weight:800; margin:4px 0 12px 0;">₹45,850.00 <span style="font-size:14px; color:#10b981;">+2.4%</span></div>
+        <div class="gp-quick-actions">
+          <button class="gp-action-btn" onclick="document.getElementById('gp-scan-btn')?.click()">📷<br>Scan QR</button>
+          <button class="gp-action-btn" onclick="document.getElementById('gp-direct-btn')?.click()">💸<br>Pay UPI</button>
+          <button class="gp-action-btn" onclick="document.getElementById('gp-myqr-btn')?.click()">🔳<br>My QR</button>
+          <button class="gp-action-btn" onclick="document.getElementById('gp-bills-btn')?.click()">⚡<br>Bills</button>
+        </div>
+      </div>
+
+      <div class="gp-section-title">People & Corridors</div>
+      <div class="gp-people-row">
+        <div class="gp-person"><div class="gp-avatar">🇮🇳</div><span>Rahul</span></div>
+        <div class="gp-person"><div class="gp-avatar">🇦🇪</div><span>Zayed</span></div>
+        <div class="gp-person"><div class="gp-avatar">🇫🇷</div><span>Claire</span></div>
+        <div class="gp-person"><div class="gp-avatar">🇳🇵</div><span>Bikash</span></div>
+        <div class="gp-person"><div class="gp-avatar">🇸🇬</div><span>Wei</span></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Systematic Bottom Navigation Bar (GPay Style) -->
+  <nav class="gp-bottom-nav">
+    <a href="#" class="gp-nav-item active">🏠<span>Home</span></a>
+    <a href="#" class="gp-nav-item" onclick="document.getElementById('gp-scan-btn')?.click(); return false;">📷<span>Scan</span></a>
+    <a href="#" class="gp-nav-item" onclick="document.getElementById('gp-bills-btn')?.click(); return false;">⚡<span>Bills</span></a>
+    <a href="#" class="gp-nav-item" onclick="alert('Profile & Settings'); return false;">👤<span>Profile</span></a>
+  </nav>
+
+  <!-- Load Scripts -->
   <script src="https://unpkg.com/html5-qrcode"></script>
   <script src="/js/gpay-features.js"></script>
-  <script src="/js/globalpay-ui.js"></script>
 </body>
 </html>
