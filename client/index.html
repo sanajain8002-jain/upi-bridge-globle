@@ -22,41 +22,73 @@
     </div>
   </header>
 
-  <!-- Main View Container (Dynamic views load here) -->
-  <main id="gp-main-content" class="gp-content">
-    <!-- Default Dashboard View -->
+  <!-- Main View Container -->
+  <main class="gp-content">
     <div class="gp-dashboard">
-      <div class="gp-hero-card">
-        <div style="font-size:13px; color:#94a3b8;">Total Portfolio Value</div>
-        <div style="font-size:28px; font-weight:800; margin:4px 0 12px 0;">₹45,850.00 <span style="font-size:14px; color:#10b981;">+2.4%</span></div>
-        <div class="gp-quick-actions">
-          <button class="gp-action-btn" onclick="document.getElementById('gp-scan-btn')?.click()">📷<br>Scan QR</button>
-          <button class="gp-action-btn" onclick="document.getElementById('gp-direct-btn')?.click()">💸<br>Pay UPI</button>
-          <button class="gp-action-btn" onclick="document.getElementById('gp-myqr-btn')?.click()">🔳<br>My QR</button>
-          <button class="gp-action-btn" onclick="document.getElementById('gp-bills-btn')?.click()">⚡<br>Bills</button>
+      
+      <!-- Left Column: Hero Portfolio Card & Quick Actions -->
+      <div>
+        <div class="gp-hero-card">
+          <div style="font-size:13px; color:#94a3b8;">Total Portfolio Value</div>
+          <div style="font-size:28px; font-weight:800; margin:4px 0 12px 0;">₹45,850.00 <span style="font-size:14px; color:#10b981;">+2.4%</span></div>
+          
+          <div class="gp-quick-actions">
+            <button class="gp-action-btn" onclick="gpOpenScan()">📷<br>Scan QR</button>
+            <button class="gp-action-btn" onclick="gpOpenPay()">💸<br>Pay UPI</button>
+            <button class="gp-action-btn" onclick="gpOpenMyQr()">🔳<br>My QR</button>
+            <button class="gp-action-btn" onclick="gpOpenBills()">⚡<br>Bills</button>
+          </div>
+        </div>
+
+        <div class="gp-section-title">People & Global Corridors</div>
+        <div class="gp-people-row">
+          <div class="gp-person" onclick="gpOpenPay()"><div class="gp-avatar">🇮🇳</div><span>Rahul</span></div>
+          <div class="gp-person" onclick="gpOpenPay()"><div class="gp-avatar">🇦🇪</div><span>Zayed</span></div>
+          <div class="gp-person" onclick="gpOpenPay()"><div class="gp-avatar">🇫🇷</div><span>Claire</span></div>
+          <div class="gp-person" onclick="gpOpenPay()"><div class="gp-avatar">🇳🇵</div><span>Bikash</span></div>
+          <div class="gp-person" onclick="gpOpenPay()"><div class="gp-avatar">🇸🇬</div><span>Wei</span></div>
         </div>
       </div>
 
-      <div class="gp-section-title">People & Corridors</div>
-      <div class="gp-people-row">
-        <div class="gp-person"><div class="gp-avatar">🇮🇳</div><span>Rahul</span></div>
-        <div class="gp-person"><div class="gp-avatar">🇦🇪</div><span>Zayed</span></div>
-        <div class="gp-person"><div class="gp-avatar">🇫🇷</div><span>Claire</span></div>
-        <div class="gp-person"><div class="gp-avatar">🇳🇵</div><span>Bikash</span></div>
-        <div class="gp-person"><div class="gp-avatar">🇸🇬</div><span>Wei</span></div>
+      <!-- Right Column: Recent Activity / Quick Bills Feed -->
+      <div>
+        <div class="gp-section-title">Quick Pay & Services</div>
+        <div style="background:#131c2e; border:1px solid #1e293b; border-radius:20px; padding:16px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; font-size:13px; font-weight:600;">
+            <span>Popular Billers</span>
+            <span style="color:#3b82f6; cursor:pointer;" onclick="gpOpenBills()">View All</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; background:#090d16; padding:10px 14px; border-radius:12px; cursor:pointer;" onclick="gpOpenBills()">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span style="font-size:18px;">📱</span>
+                <div><div style="font-size:13px; font-weight:600;">Jio Prepaid Recharge</div><div style="font-size:11px; color:#94a3b8;">+91 98765 43210</div></div>
+              </div>
+              <span style="font-size:13px; font-weight:600; color:#10b981;">₹299</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:#090d16; padding:10px 14px; border-radius:12px; cursor:pointer;" onclick="gpOpenBills()">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span style="font-size:18px;">💡</span>
+                <div><div style="font-size:13px; font-weight:600;">Electricity Board</div><div style="font-size:11px; color:#94a3b8;">Consumer #4092</div></div>
+              </div>
+              <span style="font-size:13px; font-weight:600; color:#10b981;">₹1,450</span>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   </main>
 
-  <!-- Systematic Bottom Navigation Bar (GPay Style) -->
+  <!-- Systematic Bottom Navigation Bar -->
   <nav class="gp-bottom-nav">
     <a href="#" class="gp-nav-item active">🏠<span>Home</span></a>
-    <a href="#" class="gp-nav-item" onclick="document.getElementById('gp-scan-btn')?.click(); return false;">📷<span>Scan</span></a>
-    <a href="#" class="gp-nav-item" onclick="document.getElementById('gp-bills-btn')?.click(); return false;">⚡<span>Bills</span></a>
-    <a href="#" class="gp-nav-item" onclick="alert('Profile & Settings'); return false;">👤<span>Profile</span></a>
+    <a href="#" class="gp-nav-item" onclick="gpOpenScan(); return false;">📷<span>Scan</span></a>
+    <a href="#" class="gp-nav-item" onclick="gpOpenBills(); return false;">⚡<span>Bills</span></a>
+    <a href="#" class="gp-nav-item" onclick="gpOpenMyQr(); return false;">🔳<span>Receive</span></a>
   </nav>
 
-  <!-- Load Scripts -->
+  <!-- Required Scripts -->
   <script src="https://unpkg.com/html5-qrcode"></script>
   <script src="/js/gpay-features.js"></script>
 </body>
