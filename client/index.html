@@ -26,9 +26,16 @@
   <main class="gp-content">
     <div class="gp-dashboard">
       
-      <!-- Left Column: Hero Portfolio Card & Quick Actions -->
+      <!-- Left Column: Google-Style Search & Quick Actions -->
       <div>
-        <div class="gp-hero-card">
+        <!-- Google-Style Universal Search Bar -->
+        <div class="gp-google-search-box" onclick="gpOpenPay()">
+          <span style="font-size: 18px;">🔍</span>
+          <input type="text" placeholder="Search name, UPI ID, phone, or merchant..." readonly style="background:transparent; border:none; color:#f8fafc; width:100%; outline:none; font-size:14px; cursor:pointer;">
+          <span style="font-size: 16px; color: #3b82f6;">🎙️</span>
+        </div>
+
+        <div class="gp-hero-card" style="margin-top: 16px;">
           <div style="font-size:13px; color:#94a3b8;">Total Portfolio Value</div>
           <div style="font-size:28px; font-weight:800; margin:4px 0 12px 0;">₹45,850.00 <span style="font-size:14px; color:#10b981;">+2.4%</span></div>
           
@@ -50,7 +57,7 @@
         </div>
       </div>
 
-      <!-- Right Column: Recent Activity / Quick Bills Feed -->
+      <!-- Right Column: Quick Bills Feed -->
       <div>
         <div class="gp-section-title">Quick Pay & Services</div>
         <div style="background:#131c2e; border:1px solid #1e293b; border-radius:20px; padding:16px;">

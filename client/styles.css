@@ -131,3 +131,19 @@
 .gp-nav-item.active {
   color: #3b82f6;
 }
+.gp-google-search-box {
+  background: #131c2e;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.gp-google-search-box:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
