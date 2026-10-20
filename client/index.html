@@ -4,17 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GlobalPay | Secure Global UPI</title>
+  <!-- Browser Tab Favicon -->
+  <link rel="icon" href="/assets/logo.png" type="image/png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#090d16">
 </head>
 <body class="gp-app-body">
 
-  <!-- Systematic Top Header -->
+  <!-- Systematic Top Header with Custom Logo -->
   <header class="gp-header">
     <div class="gp-brand">
-      <span class="gp-logo-icon">⚡</span>
-      <span class="gp-logo-text">GlobalPay</span>
+      <img src="/assets/logo.png" alt="GlobalPay Logo" style="width: 32px; height: 32px; object-fit: contain; border-radius: 8px;">
+      <span class="gp-logo-text" style="font-weight: 800; letter-spacing: -0.5px;">GlobalPay</span>
     </div>
     <div class="gp-wallet-pill">
       <span style="font-size:10px; color:#94a3b8; display:block;">Balance</span>
@@ -28,7 +30,7 @@
       
       <!-- Left Column: Google-Style Search & Quick Actions -->
       <div>
-        <!-- Google-Style Universal Search Bar -->
+        <!-- Universal Search Bar -->
         <div class="gp-google-search-box" onclick="gpOpenPay()">
           <span style="font-size: 18px;">🔍</span>
           <input type="text" placeholder="Search name, UPI ID, phone, or merchant..." readonly style="background:transparent; border:none; color:#f8fafc; width:100%; outline:none; font-size:14px; cursor:pointer;">
