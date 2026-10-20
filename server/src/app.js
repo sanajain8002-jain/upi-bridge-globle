@@ -386,3 +386,28 @@ export function createApp({ db, secret, staticDir = null, demoMode = true, excha
   });
   return server;
 }
+// GlobalPay Backend Transaction API
+app.post('/api/transactions', (req, res) => {
+  const { sender_upi, receiver_upi, receiver_name, amount, note } = req.body;
+  
+  if (!amount || !receiver_upi) {
+    return res.status(400).json({ success: false, error: 'Missing required payment fields' });
+  }
+
+  // Insert transaction into SQLite database ledger
+  const query = `INSERT INTO transactions (sender_upi, receiver_upi, receiver_name, amount, note, status, created_at) VALUES (?, ?, ?, ?, ?, 'SUCCESS', datetime('now'))`;
+  
+  db.run(query, [sender_upi || 'user@globalpay', receiver_upi, receiver_name, amount, note || 'UPI Transfer'], function(err) {
+    if (err) {
+      console.error('DB Error:', err.message);
+      return res.status(500).json({ success: false, error: 'Database transaction failed' });
+    }
+    
+    res.json({
+      success: true,
+      transaction_id: this.lastID,
+      utr: '6' + Math.floor(10000000000 + Math.random() * 90000000000),
+      message: 'Payment processed and saved successfully'
+    });
+  });
+});
