@@ -219,7 +219,7 @@
     let pin = '';
     modal.innerHTML = `
       <div class="gpay-card">
-        <button class="gpay-close" id="gp-x">✕</i></button>
+        <button class="gpay-close" id="gp-x">✕</button>
         <div style="font-size:12px;color:#94a3b8;border-bottom:1px solid #334155;padding-bottom:6px">Paying ₹${am} to ${pn}</div>
         <h4 style="margin:14px 0 4px 0">ENTER 4-DIGIT UPI PIN</h4>
         <div class="gpay-pin-dots">
@@ -289,3 +289,4 @@
     `;
     document.getElementById('gp-done').onclick = closeModal;
   }
+})();
